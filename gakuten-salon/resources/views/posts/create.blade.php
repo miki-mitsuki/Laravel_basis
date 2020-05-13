@@ -14,13 +14,21 @@
                        <label for="title">
                             タイトル
                         </label>
-                    <input id="title" name="title" class="form-control" type="text"/>
+                    <input id="title" name="title" class="form-control" value="{{old('title')}}" type="text"/>
+                    
+                    <div class="text-danger">
+                        {{$errors->first('title')}}
                     </div>
+                    
                     <div>
                         <label for="body">
                             本文
                         </label>
-                        <textarea id="body" name="body" class="form-control" row="4"></textarea>
+                        <textarea id="body" name="body" class="form-control" row="4">{{old('body')}}</textarea>
+                    <div class="text-danger">
+                        {{$errors->first('body')}}
+                    </div>
+                        
                     </div>
                     <div class="mt-5">
                         <a href="{{route('top')}}" class="btn btn-secondary">
